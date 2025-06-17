@@ -25,8 +25,9 @@ const Login = () => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length === 0) {
-            
-            console.log('Form submitted', { email, password });
+            const para = document.querySelector('p')
+            para.innerHTML = '';
+            alert('Form submitted', { email, password });
             // Add your submit logic here
         } else {
             setErrors(validationErrors);
