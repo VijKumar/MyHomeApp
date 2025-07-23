@@ -21,14 +21,32 @@ const Login = () => {
         return errors;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
+        
         const validationErrors = validate();
         if (Object.keys(validationErrors).length === 0) {
             const para = document.querySelector('p')
             para.innerHTML = '';
             alert('Form submitted', { email, password });
             // Add your submit logic here
+            try {
+                
+                
+                await fetch('http://localhost:8080/hi')
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log(data);
+                    })
+                    .catch((err) => {
+                        console.log(err.message);
+                    });
+             
+            } catch (error) {
+                console.error('Error during login:', error);
+                alert('An error occurred during login.');
+            }  
+
         } else {
             setErrors(validationErrors);
         }
