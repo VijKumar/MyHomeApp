@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import image from './image.png'; 
+import './jobexcel.css';
+
 
 function RegistrationForm() {
     const [form, setForm] = useState({
@@ -33,7 +36,8 @@ function RegistrationForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} style={{ maxWidth: 400, margin: '0 auto' }}>
+        <div className="container">
+        <form onSubmit={handleSubmit} style={{ maxWidth: 450, margin: '0 auto' }}>
             <h2>Registration Form</h2>
             <div>
                 <label>Name:</label><br />
@@ -85,8 +89,17 @@ function RegistrationForm() {
                     required
                 />
             </div>
+            <div>
+                <label>Phone Pay Qr:</label><br />
+                <img src={image} alt="Phone Pay QR" />
+            </div>
+            <div style={{ color: 'red', marginTop: 10 }}>
+                NOTE:
+                You will get mail in 24hrs only you have done valid payment.
+            </div>
             <button type="submit" style={{ marginTop: 16 }}>Register</button>
         </form>
+        </div>
     );
 }
 
