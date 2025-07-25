@@ -226,9 +226,7 @@ function RegistrationForm() {
       {extractedId && (
         <p className="text-sm text-gray-800 mb-2">
           <strong>Extracted ID:</strong> 
-          <span name="transid"  id="transid"
-          value={extractedId}
-                    className="text-blue-700" >{extractedId}</span>
+          <span className="text-blue-700" >{extractedId}</span>
         </p>
       )}
 
@@ -245,9 +243,7 @@ function RegistrationForm() {
       {isValid && paidTo && (
         <p className="text-sm text-gray-700 mb-4">
           <strong>Paid To:</strong> 
-          <span name="transstatus" id="transstatus"
-          value={paidTo}
-                     className="text-blue-700 font-semibold">{paidTo}</span>
+          <span  className="text-blue-700 font-semibold">{paidTo}</span>
         </p>
       )}
 
