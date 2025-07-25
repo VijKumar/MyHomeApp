@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import image from './image.png'; 
 import './jobexcel.css';
-
+import TransactionValidator from './TransactionValidator.jsx';
 
 function RegistrationForm() {
     const [form, setForm] = useState({
@@ -10,10 +10,13 @@ function RegistrationForm() {
         age: '',
         address: '',
         mobile: '',
-        email: ''
+        email: '',
+        transid: '',
+        transstatus: ''
     });
 
-    const handleChange = (e) => {
+    const 
+    handleChange = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
     };
@@ -90,8 +93,41 @@ function RegistrationForm() {
                 />
             </div>
             <div>
-                <label>Phone Pay Qr:</label><br />
+                <label>Phone Pay Qr for Rs. 100 Payment :</label><br />
                 <img src={image} alt="Phone Pay QR" />
+            </div>
+            <div>
+                <span style={{
+                    border: '1px solid #ddd',
+                    padding: '8px',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    marginBottom: '8px'
+                }}>Transaction Details:<br />
+                {/*<span>
+                <label>Transaction Id:</label><br />
+                <input
+                    type="text"
+                    name="transactionId"
+                    value={form.transactionId}
+                    onChange={handleChange}
+                    required
+                />
+                </span><br />
+                 <span>
+                <label>Payment Status:</label><br />
+                <input
+                    type="text"
+                    name="paymentStatus"
+                    value={form.paymentStatus}
+                    onChange={handleChange}
+                    required
+                />
+                </span> */}
+                <span>
+                    <TransactionValidator />
+                </span>
+                </span>
             </div>
             <div style={{ color: 'red', marginTop: 10 }}>
                 NOTE:
