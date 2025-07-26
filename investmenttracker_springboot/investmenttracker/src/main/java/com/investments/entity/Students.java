@@ -1,5 +1,7 @@
 package com.investments.entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,11 +26,15 @@ public class Students {
     @Column
     private String address;
     @Column
-    private String state;
+    private String transid;
     @Column
     private String mobile;
     @Column
     private String email;
+    @Column
+    private String transstatus;
+    @Column
+    private LocalDateTime datetime;
     
 	public Long getId() {
 		return id;
@@ -55,12 +61,6 @@ public class Students {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getState() {
-		return state;
-	}
-	public void setState(String state) {
-		this.state = state;
-	}
 	public String getMobile() {
 		return mobile;
 	}
@@ -73,6 +73,26 @@ public class Students {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getTransid() {
+		return transid;
+	}
+	public void setTransid(String transid) {
+		this.transid = transid;
+	}
+
+	public String getTransstatus() {
+		return transstatus;
+	}
+	public void setTransstatus(String transstatus) {
+		this.transstatus = transstatus;
+	}
+	public LocalDateTime getDatetime() {
+		return datetime;
+	}
+	public void setDatetime(LocalDateTime datetime) {
+		this.datetime = datetime;
+	}
+	
     
     
     

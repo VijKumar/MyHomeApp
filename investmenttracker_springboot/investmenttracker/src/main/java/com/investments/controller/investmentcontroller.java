@@ -1,5 +1,7 @@
 package com.investments.controller;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +39,7 @@ public class investmentcontroller {
 		try {
             JsonNode rootNode = objectMapper.readTree(jsonNode.get("formData").asText());
 			Students user = objectMapper.treeToValue(rootNode, Students.class);
-			
+			user.setDatetime(LocalDateTime.now());
 			Students savedUser = studentService.createUser((Students) user);
 			return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
 		} catch (JsonProcessingException | IllegalArgumentException e) {
