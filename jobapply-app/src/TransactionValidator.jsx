@@ -93,7 +93,7 @@ const TransactionValidator = () => {
 
       {extractedId && (
         <p className="text-sm text-gray-800 mb-2">
-          <strong>Extracted ID:</strong> <span name="transid" className="text-blue-700">{extractedId}</span>
+          <strong>Extracted ID:</strong> <span name="transid" className="text-blue-700" >{extractedId}</span>
         </p>
       )}
 

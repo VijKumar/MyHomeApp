@@ -101,7 +101,7 @@ function RegistrationForm() {
         alert('Registration submitted:\n' + formData); 
          e.preventDefault();
             try {
-                const response = await axios.post('http://localhost:8080/Register', { formData });
+                const response = await axios.post('https://applyjob-4twz.onrender.com/Register', { formData });
                 // Assuming your Spring Boot app runs on port 8080
                 console.log(response.data); // Log the response from the backend
                 alert('Data submitted successfully!');
