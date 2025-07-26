@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
-import image from './image.png'; 
+import ICICI_8739_PhonePe_QRCode from './ICICI_8739_PhonePe_QRCodejpg.jpg'; 
 import './jobexcel.css';
 import Tesseract from 'tesseract.js';
 
@@ -114,7 +114,7 @@ function RegistrationForm() {
     return (
         <div className="container">
         <form onSubmit={handleSubmit} style={{ maxWidth: 450, margin: '0 auto' }}>
-            <h2>Registration Form</h2>
+            <h2>Apply Registration Form</h2>
             <div>
                 <label>Name:</label><br />
                 <input
@@ -167,7 +167,7 @@ function RegistrationForm() {
             </div>
             <div>
                 <label>Phone Pay Qr for Rs. 100 Payment :</label><br />
-                <img src={image} alt="Phone Pay QR" />
+                <img src={ICICI_8739_PhonePe_QRCode} alt="Phone Pay QR" width={180} height={280}/>
             </div>
             <div>
                 <span style={{
@@ -176,7 +176,7 @@ function RegistrationForm() {
                     borderRadius: '4px',
                     display: 'inline-block',
                     marginBottom: '8px'
-                }}>Transaction Details:<br />
+                }}>
                 {/*<span>
                 <label>Transaction Id:</label><br />
                 <input
@@ -200,7 +200,7 @@ function RegistrationForm() {
                 <span>
                     
                     <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow rounded">
-      <h2 className="text-xl font-bold mb-4">Transaction Validator</h2>
+      <h4 className="text-xl font-bold mb-4">Transaction Details Validator</h4>
 
       <label className="block text-sm font-medium mb-1">Enter Transaction ID:</label>
       <input
@@ -248,7 +248,7 @@ function RegistrationForm() {
       )}
 
      
-      <button disabled={!isValid} type="submit" style={{ marginTop: 16 }}>Register</button>
+    
     </div>
 
                     
@@ -259,8 +259,10 @@ function RegistrationForm() {
                 NOTE:
                 You will get mail in 24hrs only you have done valid payment.
             </div>
+            <div style={{ marginLeft: 200 }}><br />
             <button disabled={!isValid}
              type="submit" style={{ marginTop: 16 }}>Register</button>
+             </div>
         </form>
         </div>
     );

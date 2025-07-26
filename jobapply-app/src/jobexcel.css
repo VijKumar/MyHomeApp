@@ -49,3 +49,24 @@ input[type="tel"] {
   font-size: 16px;
   color: #333;
 }
+
+h2 {
+    font-family: 'Georgia', serif;
+    font-size: 30px;
+    color: #1a1a1a;
+    text-align: center;
+    margin: 40px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #007bff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background-color: #ddaa03; /* Green background */
+  color: white; /* White text */
+  padding: 15px 40px; /* Top/bottom and left/right padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Slightly rounded corners */
+  cursor: pointer; /* Changes cursor to a pointer on hover */
+  font-size: 18px; /* Font size */
+} 
