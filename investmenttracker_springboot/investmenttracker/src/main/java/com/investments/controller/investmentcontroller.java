@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.investments.entity.Biocon_students;
 import com.investments.entity.Students;
 import com.investments.service.StudentsService;
 
@@ -46,6 +47,30 @@ public class investmentcontroller {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		 
+		 
+        return null;
+        
+    }
+	
+	@PostMapping("/Biocon_UserRegister")
+    public ResponseEntity<Biocon_students> Biocon_UserRegister(@RequestBody Biocon_students biocon_students){
+		
+        //ObjectMapper objectMapper = new ObjectMapper();
+
+		
+		//System.out.println("Received dynamic data (Map): " + jsonNode);
+		//System.out.println("Received dynamic data (Map): " + jsonNode.get("formData").asText());
+		try {
+            //JsonNode rootNode = objectMapper.readTree(jsonNode.get("formData").asText());
+            //Biocon_students user = objectMapper.treeToValue(rootNode, Biocon_students.class);
+			biocon_students.setDatetime(LocalDateTime.now());
+			Biocon_students savedUser = studentService.createUser(biocon_students);
+			return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
 		 
 		 
         return null;

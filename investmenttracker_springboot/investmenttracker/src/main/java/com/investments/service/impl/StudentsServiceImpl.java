@@ -2,7 +2,9 @@ package com.investments.service.impl;
 
 import lombok.AllArgsConstructor;
 
+import com.investments.entity.Biocon_students;
 import com.investments.entity.Students;
+import com.investments.repository.BioconStudentsRepository;
 import com.investments.repository.StudentsRepository;
 import com.investments.service.StudentsService;
 
@@ -19,6 +21,11 @@ public class StudentsServiceImpl implements StudentsService {
 
 	@Autowired
     private StudentsRepository studentsRepository;
+	
+	@Autowired
+    private BioconStudentsRepository bioconStudentsRepository;
+	
+	
 
     @Override
     public Students createUser(Students user) {
@@ -50,4 +57,11 @@ public class StudentsServiceImpl implements StudentsService {
     public void deleteUser(Long userId) {
         studentsRepository.deleteById(userId);
     }
+    
+    
+    @Override
+    public Biocon_students createUser(Biocon_students user) {
+        return bioconStudentsRepository.save(user);
+    }
+    
 }
