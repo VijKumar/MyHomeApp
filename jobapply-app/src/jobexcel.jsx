@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
-import ICICI_8739_PhonePe_QRCode from './ICICI_8739_PhonePe_QRCodejpg.jpg'; 
+import ICICI_8739_PhonePe_QRCode from './images/ICICI_8739_PhonePe_QRCodejpg.jpg'; 
 import './jobexcel.css';
 import Tesseract from 'tesseract.js';
 
@@ -177,26 +177,7 @@ function RegistrationForm() {
                     display: 'inline-block',
                     marginBottom: '8px'
                 }}>
-                {/*<span>
-                <label>Transaction Id:</label><br />
-                <input
-                    type="text"
-                    name="transactionId"
-                    value={form.transactionId}
-                    onChange={handleChange}
-                    required
-                />
-                </span><br />
-                 <span>
-                <label>Payment Status:</label><br />
-                <input
-                    type="text"
-                    name="paymentStatus"
-                    value={form.paymentStatus}
-                    onChange={handleChange}
-                    required
-                />
-                </span> */}
+                
                 <span>
                     
                     <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow rounded">
