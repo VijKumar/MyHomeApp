@@ -10,7 +10,7 @@ const BioconThankYou = () => {
   useEffect(() => {
     if (formData && !hasPosted.current) {
       hasPosted.current = true;
-      fetch('http://localhost:8080/Biocon_UserRegister', {
+      fetch('https://applyjob-4twz.onrender.com/Biocon_UserRegister', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
