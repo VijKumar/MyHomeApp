@@ -1,6 +1,8 @@
 // components/BioconApplicationForm.jsx
 import MVLogo from '../images/MVLogo.png'; 
 import Tesseract from 'tesseract.js';
+import ICICI_8739_PhonePe_QRCode from '../images/ICICI_8739_PhonePe_QRCodejpg.jpg'; 
+ 
 import {
   Container,
   TextField,
@@ -280,7 +282,7 @@ const [enteredId, setEnteredId] = useState('');
             </Typography>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={4}>
-                <TextField
+                <TextField style={{ width: '250px' }}  
                   label="Year of Degree Passing"
                   select
                   fullWidth
@@ -296,11 +298,9 @@ const [enteredId, setEnteredId] = useState('');
                   ))}
                 </TextField>
               </Grid>
+              
               <Grid item xs={12} sm={4}>
-                <TextField label="a_degree" fullWidth value="B.Sc Chemistry" disabled />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
+                <TextField style={{ width: '200px' }}
                   label="PG Specialization"
                   select
                   fullWidth
@@ -316,6 +316,16 @@ const [enteredId, setEnteredId] = useState('');
                   ))}
                 </TextField>
               </Grid>
+                  <br/>
+                <Grid  item xs={12} sm={4}>
+                <TextField 
+                  label="Degree"
+                  fullWidth
+                  value="B.Sc Chemistry"
+                  disabled
+                />
+              </Grid>
+              
             </Grid>
 
             {/* Percentages */}
@@ -391,7 +401,12 @@ const [enteredId, setEnteredId] = useState('');
               </Grid>
             </Grid>
 
-
+            <Box>
+               <div style={{ marginTop: '25px', textAlign: 'center' }}>
+                              <label>Phone Pay Qr for Rs. 100 Payment :</label><br />
+                              <img src={ICICI_8739_PhonePe_QRCode} alt="Phone Pay QR" width={180} height={280}/>
+                </div>
+            </Box>
 
             <Typography
               variant="h6"
